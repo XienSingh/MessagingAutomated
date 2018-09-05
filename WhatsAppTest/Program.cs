@@ -12,6 +12,7 @@ namespace WhatsAppTest
         {
             const string accountSid = "##";//Provider Provided
             const string authToken = "##";//Provider Provided
+            //Keegan Test
 
             TwilioClient.Init(accountSid, authToken);
 
@@ -25,18 +26,16 @@ namespace WhatsAppTest
             foreach (var x in Contacts)
             {
                 var message = MessageResource.Create(
-                body: "This is a Test, Have a look at this TEST : "+ x.Key,
+                body: "This is a Test, Have a look at this TEST : " + x.Key,
                 from: new PhoneNumber("whatsapp:+###"), //Provider ID
-                to: new PhoneNumber("whatsapp:"+x.Value)
+                to: new PhoneNumber("whatsapp:" + x.Value)
             );
                 Console.WriteLine(message.Sid);
             }
-            
+
 
 
 
         }
     }
 }
-
-
